@@ -6,5 +6,17 @@ def classPhotos(redShirtHeights, blueShirtHeights):
     Write a function that returns whether or not a class photo that follows the stated guidelines can be taken.
     Note: you can assume that each class has at least 2 students.
     """
-    pass
+    redShirtHeights.sort(reverse=True)
+    blueShirtHeights.sort(reverse=True)
+    first_row_color = "RED" if redShirtHeights[0] < blueShirtHeights[0] else "BLUE"
+    for idx in range(len(redShirtHeights)):
+        redShirtHeight = redShirtHeights[idx]
+        blueShirtHeight = blueShirtHeights[idx]
+        if first_row_color == "RED":
+            if redShirtHeight >= blueShirtHeight:
+                return False
+        else:
+            if blueShirtHeight >= redShirtHeight:
+                return False
+    return True
 
