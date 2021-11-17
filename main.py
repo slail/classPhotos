@@ -7,7 +7,7 @@ def classPhotos(redShirtHeights, blueShirtHeights):
     Note: you can assume that each class has at least 2 students.
     """
     # O(N) time, where n is total number of shirts
-    # O(1) space,
+    # O(1) space, constant space
     redShirtHeights.sort(reverse=True)
     blueShirtHeights.sort(reverse=True)
     first_row_color = "RED" if redShirtHeights[0] < blueShirtHeights[0] else "BLUE"
